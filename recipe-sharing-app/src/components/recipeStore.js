@@ -33,6 +33,8 @@ export const useRecipeStore = create((set) => ({
       ),
     })),
 
+    setRecipes: (newRecipes) => set({ recipes: newRecipes }),
+
   // Add a recipe. If recipe.id is not provided, we create a simple unique id.
   addRecipe: (recipe) =>
     set((state) => ({
