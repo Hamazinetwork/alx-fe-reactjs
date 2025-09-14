@@ -19,6 +19,19 @@ export const useRecipeStore = create((set) => ({
       steps: ["Toast bread", "Mash avocado", "Spread and season"]
     }
   ],
+  searchTerm: '',
+  filteredRecipes: [],
+  
+  // Action: set search term
+  setSearchTerm: (term) => set({ searchTerm: term }),
+
+  // Action: filter recipes
+  filterRecipes: () =>
+    set((state) => ({
+      filteredRecipes: state.recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+      ),
+    })),
 
   // Add a recipe. If recipe.id is not provided, we create a simple unique id.
   addRecipe: (recipe) =>
