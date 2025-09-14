@@ -15,6 +15,8 @@ function App() {
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipes/:id" element={<RecipeDetails />} />
           <Route path="/recipes/:id" element={<AddRecipeForm />} />
+          <Route path="/favorites" element={<FavoritesList />} />
+          <Route path="/recommendations" element={<RecommendationsList />} />
           {/* if you want a separate edit page:
               <Route path="/recipes/:id/edit" element={<EditRecipePage />} />
           */}
